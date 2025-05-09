@@ -13,4 +13,4 @@ sound:Play()
 sound.Ended:Wait()
 sound:Destroy() --Sound end
 getgenv().gethui = function() return game:GetService("CoreGui") end
-loadstring(game:HttpGet(getgenv().script))() -load script
+loadstring(game:HttpGet(getgenv().script))() --load script
