@@ -426,5 +426,6 @@ end
 coroutine.wrap(FKPD_fake_script)()
 
 game:GetService("Players").LocalPlayer.Character.Humanoid.Died:Connect(function()
-	loadstring(game:HttpGet("https://github.com/danya2854/Myscripts/raw/refs/heads/main/Test"))()
+	coroutine.wrap(loadstring(game:HttpGet("https://github.com/danya2854/Myscripts/raw/refs/heads/main/Test")))()
+	game.Players.LocalPlayer:WaitForChild("PlayerGui").EmoteWheelUI:Destroy()
 end)
