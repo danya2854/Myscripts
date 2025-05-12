@@ -1,0 +1,33 @@
+--[[
+
+if u want to disable the script, just use getgenv().autoThank = false 
+without the rest of the script
+Если ты хочешь выключить скрипт, то просто используй getgenv().autoThank = true
+без остальной части скрипта
+
+]]--
+--Made by Danechka | Сделано Данечкой. Снизу ссылки на мои скрипты
+--https://rscripts.net/@danechka or on https://scriptblox.com/u/Danechka
+--u can change this означает что это ты можешь поменять, а там где u can't change this, наоборот
+getgenv().autoThank = true --u can change this
+local chat = game:GetService("TextChatService"):WaitForChild("TextChannels"):WaitForChild("RBXGeneral") --u can't change this
+
+msgsTable = {
+   "master oogway thanks u",-- u can change this
+   "fr fr omg ty",--u can change this
+   "me when the impostor donated, thanks",--u can change this
+   "lets goo dude thanks"--u can change this
+   
+   --Here you can add as many sentences as you want, just follow the template
+   --Здесь вы можете добавлять сколько хотите предложений, главное следуйте по шаблону
+}
+game.Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()--don't change
+	if getgenv().autoThank then --u can't change this
+		chat:SendAsync(msgsTable[math.random(0, #msgsTable)]) --u can't change this
+	end --u can't change this
+end)--u can't change this
+local VirtualUser = game:GetService("VirtualUser") --u can't change this
+game.Players.LocalPlayer.Idled:Connect(function() --u can't change this
+	VirtualUser:CaptureController() --u can't change this
+	VirtualUser:ClickButton2(Vector2.new()) --u can't change this
+end)--u can't change this
