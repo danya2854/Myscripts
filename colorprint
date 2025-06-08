@@ -1,3 +1,11 @@
+--[[
+Don't steal! If u want modernizate, modernizate. But if you want to post it, then mention me as the original author!
+-]]
+
+
+
+
+
 local function global()
 	if getgenv() then
 		return getgenv()
