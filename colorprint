@@ -80,4 +80,4 @@ _G.colorprint=function(message, iconType, textColor)
         end
     end)
 end
-colorprint("This like error", "error", Color3.fromRGB(255,0,0))
+--colorprint("This like error", "error", Color3.fromRGB(255,0,0))
