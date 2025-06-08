@@ -1,4 +1,12 @@
-_G.colorprint=function(message, iconType, textColor)
+local function global()
+	if getgenv() then
+		return getgenv()
+	else
+		return _G
+	end
+end
+
+global().colorprint=function(message, iconType, textColor)
     local message = message or "" -- text to print
     local textColor,colorText = textColor or Color3.fromRGB(255,255,255),true -- text color and if enabled
     local iconColor,colorIcon=Color3.fromRGB(0,0,0),false
@@ -80,4 +88,4 @@ _G.colorprint=function(message, iconType, textColor)
         end
     end)
 end
---colorprint("This like error", "error", Color3.fromRGB(255,0,0))
+--colorprint("This like error", "error", Color3.fromRGB(255,0,0)) --print
