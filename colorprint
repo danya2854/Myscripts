@@ -6,15 +6,9 @@ Don't steal! If u want modernizate, modernizate. But if you want to post it, the
 
 
 
-local function global()
-	if getgenv() then
-		return getgenv()
-	else
-		return _G
-	end
-end
+local global = (getgenv and getgenv()) or _G
 
-global().colorprint=function(message, iconType, textColor)
+global.colorprint=function(message, iconType, textColor)
     local message = message or "" -- text to print
     local textColor,colorText = textColor or Color3.fromRGB(255,255,255),true -- text color and if enabled
     local iconColor,colorIcon=Color3.fromRGB(0,0,0),false
