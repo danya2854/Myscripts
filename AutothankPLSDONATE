@@ -2,7 +2,7 @@
 
 if u want to disable the script, just use getgenv().autoThank = false 
 without the rest of the script
-Если ты хочешь выключить скрипт, то просто используй getgenv().autoThank = true
+Если ты хочешь выключить скрипт, то просто используй getgenv().autoThank = false
 без остальной части скрипта
 
 ]]--
