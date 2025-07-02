@@ -1,16 +1,17 @@
-Reset: 0
-Bold: 1
-Italic: 3
-Underline: 4
-Inverse: 7
-Super_black: 8
-Black: 30
+Reset or Default
+Strikethrough or Strike
+Bold
+Italic or Ital
+Underline or Under
+Inverse
+Super_black or Superblack
+Black
 
-Red: 91
-Green: 92
-Yellow: 93
-Blue: 94
-Magenta: 95
-Cyan: 96
-White: 97
-Selected: 100
+Red
+Green or Lime
+Yellow
+Blue
+Magenta or Purple
+Cyan
+White
+Selected
