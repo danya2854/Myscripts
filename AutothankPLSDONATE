@@ -1,15 +1,14 @@
 --[[
 
-if u want to disable the script, just use getgenv().autoThank = false 
-without the rest of the script
-Если ты хочешь выключить скрипт, то просто используй getgenv().autoThank = false
-без остальной части скрипта
+if u want to disable the script, just restart script
+Если ты хочешь выключить скрипт, то просто выполни его снова (запусти снова)
 
 ]]--
 --Made by Danechka | Сделано Данечкой. Снизу ссылки на мои скрипты
 --https://rscripts.net/@danechka or on https://scriptblox.com/u/Danechka
 --u can change this означает что это ты можешь поменять, а там где u can't change this, наоборот
-getgenv().autoThank = true --u can change this
+local global = (getgenv and getgenv()) or _G --u can't change this
+global.autoThank = not global.autoThank --u can't change this
 local chat = game:GetService("TextChatService"):WaitForChild("TextChannels"):WaitForChild("RBXGeneral") --u can't change this
 
 msgsTable = {
@@ -22,7 +21,7 @@ msgsTable = {
    --Здесь вы можете добавлять сколько хотите предложений, главное следуйте по шаблону
 }
 game.Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()--don't change
-	if getgenv().autoThank then --u can't change this
+	if global.autoThank then --u can't change this
 		chat:SendAsync(msgsTable[math.random(0, #msgsTable)]) --u can't change this
 	end --u can't change this
 end)--u can't change this
