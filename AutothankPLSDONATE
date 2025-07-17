@@ -7,8 +7,17 @@ if u want to disable the script, just restart script
 --Made by Danechka | Сделано Данечкой. Снизу ссылки на мои скрипты
 --https://rscripts.net/@danechka or on https://scriptblox.com/u/Danechka
 --u can change this означает что это ты можешь поменять, а там где u can't change this, наоборот
+local function SendMessage(msg)
+    if game:GetService("TextChatService").TextChannels.RBXGeneral then
+       game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
+    else
+       game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+    end
+end --u can't change this
+
 local global = (getgenv and getgenv()) or _G --u can't change this
 global.autoThank = not global.autoThank --u can't change this
+
 local chat = game:GetService("TextChatService"):WaitForChild("TextChannels"):WaitForChild("RBXGeneral") --u can't change this
 
 msgsTable = {
@@ -22,7 +31,7 @@ msgsTable = {
 }
 game.Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()--don't change
 	if global.autoThank then --u can't change this
-		chat:SendAsync(msgsTable[math.random(0, #msgsTable)]) --u can't change this
+		SendMessage(msgsTable[math.random(0, #msgsTable)]) --u can't change this
 	end --u can't change this
 end)--u can't change this
 local VirtualUser = game:GetService("VirtualUser") --u can't change this
