@@ -1,0 +1,25 @@
+local config = {}
+--[[Use like this: 
+local config = loadstring(game:HttpGet("https://raw.githubusercontent.com/danya2854/Myscripts/refs/heads/main/JSON-Config"))()
+if config.IsConfig(rivals-settings) then
+  config.Write("rivals-settings", data)
+else:
+  config.Read(rivals-settings)
+]]--
+
+
+-- Functions
+function config.Write(fname, data)
+	writefile(fname..".json", game:GetService("HttpService"):JSONEncode(data))
+end
+
+function config.IsConfig(fname)
+	return isfile(fname..".json")
+end
+
+function config.Read(fname)
+	return game:GetService("HttpService"):JSONDecode(readfile(fname..".json"))
+end
+
+-- Returns libriary of functions.
+return config
