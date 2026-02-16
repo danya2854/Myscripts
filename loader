@@ -1,3 +1,4 @@
+local global = (getgenv and getgenv()) or _G
 local sound = Instance.new("Sound")
 sound.Name = ""
 sound.Parent = game:GetService("Players").LocalPlayer
@@ -12,5 +13,5 @@ Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"}) --Notification
 sound:Play()
 sound.Ended:Wait()
 sound:Destroy() --Sound end
-getgenv().gethui = function() return game:GetService("CoreGui") end
-loadstring(game:HttpGet(getgenv().script))() --load script
+global.gethui = function() return game:GetService("CoreGui") end
+loadstring(game:HttpGet(global.script))() --load script
