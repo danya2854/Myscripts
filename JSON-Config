@@ -21,5 +21,9 @@ function config.Read(fname)
 	return game:GetService("HttpService"):JSONDecode(readfile(fname..".json"))
 end
 
+function config.Delete(fname)
+	return delfile(fname)
+end
+
 -- Returns libriary of functions.
 return config
