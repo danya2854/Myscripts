@@ -25,5 +25,9 @@ function config.Delete(fname)
 	return delfile(fname)
 end
 
+function config.NewFolder(fname)
+	return makefolder(fname)
+end
+
 -- Returns libriary of functions.
 return config
