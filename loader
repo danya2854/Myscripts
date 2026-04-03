@@ -15,3 +15,4 @@ sound.Ended:Wait()
 sound:Destroy() --Sound end
 global.gethui = function() return game:GetService("CoreGui") end
 loadstring(game:HttpGet(global.script))() --load script
+global.script = nil
