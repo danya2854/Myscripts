@@ -6,7 +6,7 @@ decoded = loadstring(game:HttpGet(https://raw.githubusercontent.com/danya2854/My
 print(decoded) -->> Hello World, and u! 
 ]]--
 
-local code = global.code
+local code = code
 -- Deobfusction base64
 
 local function DYYqBO(data)
