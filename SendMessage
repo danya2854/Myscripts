@@ -1,0 +1,16 @@
+local TextChatService = game:GetService("TextChatService")
+local replStorage = game:GetService("ReplicatedStorage")
+
+local function sendMessage(message)
+    if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
+        return pcall(function() TextChatService:WaitForChild("TextChannels"):FindFirstChild("RBXGeneral"):SendAsync(message) end)
+    else
+        local chatEvent = replStorage:FindFirstChild("DefaultChatSystemChatEvents") and replStorage.DefaultChatSystemChatEvents:FindFirstChild("SayMessageRequest")
+        
+        if chatEvent then
+            chatEvent:FireServer(message, "All")
+        end
+    end
+end
+return sendMessage
+--sendMessage("text") 
