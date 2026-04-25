@@ -14,5 +14,5 @@ sound:Play()
 sound.Ended:Wait()
 sound:Destroy() --Sound end
 global.gethui = function() return game:GetService("CoreGui") end
-loadstring(game:HttpGet(global.script))() --load script
+loadstring(request({Url = global.script}).Body)() --load script
 global.script = nil
