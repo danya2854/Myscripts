@@ -14,5 +14,17 @@ sound:Play()
 sound.Ended:Wait()
 sound:Destroy() --Sound end
 global.gethui = function() return game:GetService("CoreGui") end
-loadstring(request({Url = "https://github.com/danya2854/Myscripts/raw/refs/heads/main/"..global.script}).Body)() --load script
+local request = request or http_request or httprequest or httpRequest or syn.httprequest or syn.http_request or syn.request
+
+if (script:find('https://')) then
+    link = global.script
+else
+    link = "https://github.com/danya2854/Myscripts/raw/refs/heads/main/"..global.script
+end
+
+if request then
+    loadstring(request({Url = link}).Body)() --load script
+else
+	loadstring(game:HttpGet(link))() --load script
+end
 global.script = nil
