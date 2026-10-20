@@ -1,0 +1,28 @@
+local requests = {}
+local request = request or http_request or httprequest or httpRequest or (syn and (syn.httprequest or syn.http_request or syn.request))
+function requests:Get(url)
+	if request then
+        return request({Url = url, Method = "GET",Headers = {["User-Agent"] = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Mobile/15E148 Safari/604.1"}}).Body
+    else
+        return game:HttpGet(url)
+    end
+end
+
+function requests:Post(url, data)
+	local jsonBody = type(data) == "table" and game:GetService("HttpService"):JSONEncode(data) or tostring(data)
+
+    if request then
+        local req = request({
+            Url = url,
+            Method = "POST",
+            Headers = {
+                ["User-Agent"] = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Mobile/15E148 Safari/604.1",
+                ["Content-Type"] = "application/json"
+            },
+            Body = jsonBody
+        })
+        return req.Body
+    else
+        return game:HttpPost(url, jsonBody, true)
+    end
+end
