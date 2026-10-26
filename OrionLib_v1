@@ -46,7 +46,9 @@ end
 
 local Orion = Instance.new("ScreenGui")
 local Modal = Instance.new("TextButton")
-
+local CoreGui = gethui() or game.CoreGui
+local chatGui = CoreGui:FindFirstChild("ExperienceChat")
+Orion.DisplayOrder = chatGui.DisplayOrder - 1
 local FocusDrag = nil
 
 Orion.Name = "Orion"
